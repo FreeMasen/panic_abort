@@ -1,0 +1,30 @@
+    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+     Running `target/debug/panic_abort`
+thread 'main' panicked at 'rwlock read lock would result in deadlock', /home/rfm/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/macros.rs:13:23
+stack backtrace:
+   0:     0x55d49655f985 - backtrace::backtrace::libunwind::trace::h14d338b30b3ea0a7
+                               at /cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.46/src/backtrace/libunwind.rs:86
+   1:     0x55d49655f985 - backtrace::backtrace::trace_unsynchronized::h73ea91d74a3fd67f
+                               at /cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.46/src/backtrace/mod.rs:66
+   2:     0x55d49655f985 - std::sys_common::backtrace::_print_fmt::hd42948c952866e12
+                               at src/libstd/sys_common/backtrace.rs:78
+   3:     0x55d49655f985 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::ha8f928866ff7571e
+                               at src/libstd/sys_common/backtrace.rs:59
+   4:     0x55d49657c03c - core::fmt::write::he0c1e5f7426d2718
+                               at src/libcore/fmt/mod.rs:1076
+   5:     0x55d49655dd62 - std::io::Write::write_fmt::hf3afc6cfd57d0033
+                               at src/libstd/io/mod.rs:1537
+   6:     0x55d496561da0 - std::sys_common::backtrace::_print::hfc0110703f3696fd
+                               at src/libstd/sys_common/backtrace.rs:62
+   7:     0x55d496561da0 - std::sys_common::backtrace::print::h3f77c6990ddfaa22
+                               at src/libstd/sys_common/backtrace.rs:49
+   8:     0x55d496561da0 - std::panicking::default_hook::{{closure}}::heae49580a8d62d75
+                               at src/libstd/panicking.rs:198
+   9:     0x55d496561aec - std::panicking::default_hook::hecc34e3f729e213c
+                               at src/libstd/panicking.rs:217
+  10:     0x55d4965623e3 - std::panicking::rust_panic_with_hook::he82f5d0644692441
+                               at src/libstd/panicking.rs:526
+  11:     0x55d496558a19 - std::panicking::begin_panic::h54b82f26f8605773
+                               at /home/rfm/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/panicking.rs:456
+  12:     0x55d496558da7 - std::sys::unix::rwlock::RWLock::read::hdf6526b69a03906b
+                               at /home/rfm/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/macros.rs:13
